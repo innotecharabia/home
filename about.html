@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>عن الشركة | ITA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <style>
+    .icon-btn{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;padding:10px;border-radius:12px}
+    .nav__menu .nav__link svg{width:22px;height:22px}
+    html:not([data-theme="dark"]) .ico-moon{display:none}
+    html[data-theme="dark"] .ico-sun{display:none}
+    .nav__link{display:inline-flex;align-items:center;gap:10px}
+    .nav__link .label{font-weight:600}
+    .nav__toggle{display:none}
+    .about-hero{position:relative;overflow:hidden;border-radius:20px;box-shadow:var(--shadow-2)}
+    .about-hero video{width:100%;height:520px;object-fit:cover;display:block}
+    .about-hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55));display:grid;place-items:center;color:#fff;text-align:center;padding:24px}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:var(--glass-bg);backdrop-filter:saturate(160%) blur(10px);border:1px solid var(--glass-brd);padding:8px 12px;border-radius:999px}
+    .values{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .values .card{padding:20px}
+    .gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .gallery img{width:100%;height:220px;object-fit:cover;border-radius:14px;border:1px solid var(--border);box-shadow:var(--shadow-1);cursor:pointer;transition:transform var(--dur-fast) var(--ease)}
+    .gallery img:hover{transform:translateY(-2px)}
+    .badges{display:flex;flex-wrap:wrap;gap:10px}
+    .timeline{display:grid;gap:14px}
+    .timeline .step{display:flex;gap:12px;align-items:flex-start}
+    .timeline .dot{width:16px;height:16px;border-radius:50%;background:var(--brand-600);box-shadow:0 0 0 6px color-mix(in srgb,var(--brand-600) 18%,transparent)}
+    @media (max-width:980px){.values{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.about-hero video{height:380px}}
+    @media (max-width:920px){
+      .nav__toggle{display:inline-flex}
+      .nav__menu{position:fixed;inset:64px 0 auto 0;background:var(--bg);border-bottom:1px solid var(--border);padding:12px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;transform:translateY(-130%);opacity:0;pointer-events:none;transition:transform .25s var(--ease),opacity .25s var(--ease);z-index:51}
+      .nav.open .nav__menu{transform:none;opacity:1;pointer-events:auto}
+      .nav__link{justify-content:center;padding:12px;border-radius:12px;background:var(--bg-elev-1);border:1px solid var(--border)}
+      .nav__link .label{display:none}
+      .nav__backdrop{display:none}
+      .nav.open .nav__backdrop{display:block;position:fixed;inset:0;background:color-mix(in oklab,#000 45%, transparent);z-index:50}
+      .header-cta .btn-primary span{display:none}
+      .header-cta .btn-primary svg{margin:0}
+    }
+  </style>
+  <div class="nav__bar container">
+    <a href="index.html" class="nav__brand" style="display:flex;align-items:center;gap:12px">
+      <img data-brand-logo data-logo-light="logo.png" data-logo-dark="wlogo.png" src="logo.png" alt="ITA" style="height:34px;width:auto">
+    </a>
+    <button id="navToggle" class="btn btn-outline icon-btn nav__toggle" aria-label="القائمة">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav__menu" id="mainNav">
+      <a class="nav__link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5l9-7 9 7"/><path d="M5 10v10h6v-6h2v6h6V10"/></svg><span class="label">الرئيسية</span></a>
+      <a class="nav__link" href="about.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h2v5h-2"/></svg><span class="label">عن الشركة</span></a>
+      <a class="nav__link" href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span class="label">خدماتنا</span></a>
+      <a class="nav__link" href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v6H3z"/><path d="M3 14h8v6H3z"/><path d="M13 14h8v6h-8z"/></svg><span class="label">مشاريعنا</span></a>
+      <a class="nav__link" href="sectors.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M21 12l-9 5-9-5"/><path d="M21 17l-9 5-9-5"/></svg><span class="label">القطاعات</span></a>
+      <a class="nav__link" href="partners.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 12.5l2.5 2.5 6-6"/><path d="M3 12a5 5 0 007 7l2-2"/><path d="M21 12a5 5 0 00-7-7l-2 2"/></svg><span class="label">شركاؤنا</span></a>
+      <a class="nav__link" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="label">تواصل</span></a>
+    </nav>
+    <div class="header-cta">
+      <button class="btn btn-outline icon-btn" data-theme-toggle aria-label="تبديل النمط">
+        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l-1.5-1.5M20.5 20.5 19 19M19 5l1.5-1.5M5 19l-1.5 1.5"/></svg>
+        <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <a href="contact.html" class="btn btn-primary" aria-label="احجز استشارة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29.95l-2.2 2.2a16 16 0 0 0 6.9 6.9l2.2-2.2a1 1 0 0 1 .95-.29l4 1a1 1 0 0 1 .75 1z"/></svg>
+        <span>احجز استشارة</span>
+      </a>
+    </div>
+  </div>
+  <div class="nav__backdrop"></div>
+</header>
+
+<main>
+  <section class="section section--hero">
+    <div class="container">
+      <div class="about-hero">
+        <img src="comp.png" alt="">
+
+        <div class="overlay">
+          <div>
+            <div class="pill" style="justify-content:center;margin-bottom:12px">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l4 8 8 1-6 6 2 9-8-5-8 5 2-9-6-6 8-1 4-8z"/></svg>
+              القوة المحركة للتحول الرقمي
+            </div>
+            <h1 class="h1" style="color:#fff;margin:0 0 10px">نصنع منظومات تقنية تسبق المستقبل</h1>
+            <p style="max-width:60ch;margin:auto;opacity:.95">نبني حلولاً موثوقة قابلة للتوسع، ونحوّل تحديات العملاء إلى فرص نمو ملموسة من خلال التكامل، الأتمتة، والأمن الذكي.</p>
+            <div class="hero-cta" style="justify-content:center">
+              <a href="services.html" class="btn btn-primary">استكشف خدماتنا</a>
+              <a href="contact.html" class="btn btn-outline">تواصل مباشرة</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-2">
+      <div class="reveal">
+        <h2 class="h2">من نحن</h2>
+        <p class="p max-w-prose">شركة سعودية متخصصة في تقنية المعلومات والتحول الرقمي. ننفّذ حلول أمنية وتشغيلية متكاملة، ونوفّر بنية تحتية قوية، وأنظمة تحكم وتعرّف متقدمة، ومنصات متنقلة وطائرات بدون طيار تُربط لحظيًا بغرف العمليات. نعمل بعقيدة الأداء العالي، وبمنهجية تضمن السرعة والمرونة دون التفريط بالجودة.</p>
+        <div class="badges mt-3">
+          <span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l7 4v6c0 5-3.33 9.74-7 10-3.67-.26-7-5-7-10V6l7-4z"/></svg> اعتمادية عالية</span>
+          <span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 12l9-9 9 9-9 9-9-9z"/></svg> تكامل عميق</span>
+          <span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M12 5v14"/></svg> قابلية التوسع</span>
+        </div>
+        <div class="kpis mt-5">
+          <div class="kpi"><div class="num" data-count-to="120">0</div><div class="label">مشروع منجز</div></div>
+          <div class="kpi"><div class="num" data-count-to="40">0</div><div class="label">شراكة تقنية</div></div>
+          <div class="kpi"><div class="num" data-count-to="12">0</div><div class="label">قطاعات</div></div>
+          <div class="kpi"><div class="num" data-count-to="5">0</div><div class="label">مدن رئيسية</div></div>
+        </div>
+      </div>
+      <div class="card glass reveal">
+        <h3 class="h2" style="font-size:var(--fs-h2)">لماذا نختلف</h3>
+        <div class="timeline mt-3">
+          <div class="step"><div class="dot"></div><div><strong>تصميم حلول على المقاس</strong><div class="p">تحليل دقيق للاحتياج وتخطيط معماري يضمن كفاءة التكلفة وسرعة النشر.</div></div></div>
+          <div class="step"><div class="dot"></div><div><strong>تكامل لحظي مع الأنظمة</strong><div class="p">ربط ذكي لقواعد البيانات والمنصات التشغيلية لتقديم رؤية موحدة.</div></div></div>
+          <div class="step"><div class="dot"></div><div><strong>تشغيل وصيانة بمعايير عالمية</strong><div class="p">مؤشرات أداء واضحة، تقارير مبسطة، واستجابة سريعة للطوارئ.</div></div></div>
+          <div class="step"><div class="dot"></div><div><strong>أمان وخصوصية</strong><div class="p">طبقات حماية متعددة ونهج وقائي يسبق المخاطر.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card reveal">
+          <div class="badge mb-3">الرؤية</div>
+          <h3 class="h2" style="font-size:var(--fs-h2)">أن نكون القوة المحركة للتحول الرقمي في المملكة</h3>
+          <p class="p">نُسرّع تبني التقنيات المتقدمة ونحوّلها إلى قيمة تشغيلية ملموسة تدعم مستهدفات رؤية 2030.</p>
+        </div>
+        <div class="card reveal">
+          <div class="badge mb-3">الرسالة</div>
+          <h3 class="h2" style="font-size:var(--fs-h2)">نهج يعتمد الابتكار والتكامل والالتزام</h3>
+          <p class="p">نبتكر وننفّذ حلولاً تقنية ذكية تمكّن عملاءنا من تجاوز التحديات وتسريع النمو مع أعلى مستويات الأمان والموثوقية.</p>
+        </div>
+      </div>
+      <div class="values mt-5">
+        <div class="card reveal"><div class="badge mb-2">الريادة بلا تردد</div><p class="p">قرارات سريعة مدروسة تقود السوق ولا تتبعه.</p></div>
+        <div class="card reveal"><div class="badge mb-2">الابتكار المتجدد</div><p class="p">تحسين مستمر وتجريب مسؤول لتقنيات تضيف قيمة.</p></div>
+        <div class="card reveal"><div class="badge mb-2">الالتزام الجذري</div><p class="p">شراكات مبنية على نتائج قابلة للقياس وثقة طويلة الأمد.</p></div>
+        <div class="card reveal"><div class="badge mb-2">السرعة والمرونة</div><p class="p">فرق عمل رشيقة، مسارات تسليم قصيرة، وتجربة خالية من التعقيد.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="h2 reveal">مقرّ حديث يعكس جودة التنفيذ</h2>
+      <p class="p max-w-prose reveal">بيئة عمل مجهّزة لتجربة الحلول قبل نشرها في مواقع العملاء، مع غرف اجتماعات، مساحات عمل مرنة، وبنية تحتية شبكية مطابقة لمعايير الإنتاج.</p>
+      <div class="gallery mt-4">
+        <img class="reveal" src="1.jpg" alt="مكاتب الفريق" data-gallery="0">
+        <img class="reveal" src="2.jpg" alt="مساحة العمل المشتركة" data-gallery="1">
+        <img class="reveal" src="3.jpg" alt="مدخل المبنى" data-gallery="2">
+        <img class="reveal" src="4.jpg" alt="الردهة والسلالم" data-gallery="3">
+      </div>
+      <div class="card glass mt-5 reveal">
+        <div class="grid grid-2" style="align-items:center">
+          <div>
+            <div class="badge mb-2">موقع الشركة</div>
+            <h3 class="h2" style="font-size:var(--fs-h2)">الرياض، المملكة العربية السعودية</h3>
+            <p class="p">موقع استراتيجي يسهّل الوصول والتوسع التشغيلي، مع قرب من شركائنا وعملائنا في القطاعات الحيوية.</p>
+            <div class="hero-cta">
+              <a href="contact.html" class="btn btn-primary">احجز زيارة</a>
+              <a href="services.html" class="btn btn-outline">تعرّف على الحلول</a>
+            </div>
+          </div>
+          <div class="reveal">
+      <div style="position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-2)">
+        <iframe
+          src="https://maps.google.com/maps?q=24.7431068,46.7247772&z=18&hl=ar&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          style="position:absolute;inset:0;width:100%;height:100%;border:0"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="hero-cta" style="margin-top:10px">
+        <a class="btn btn-outline" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/place/24%C2%B044'35.2%22N+46%C2%B043'29.2%22E/@24.7431068,46.7269659,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.7431068!4d46.7247772?entry=ttu&g_ep=EgoyMDI1MTAwNC4wIKXMDSoASAFQAw%3D%3D">
+          فتح في خرائط Google
+        </a>
+      </div>
+    </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid-2">
+      <div class="card reveal">
+        <div class="badge mb-2">معايير العمل</div>
+        <p class="p">نلتزم بأفضل الممارسات في الأمن السيبراني، استمرارية الأعمال، وإدارة المشاريع. يُترجم ذلك إلى انتشار سريع، تقليل للأعطال، وتجربة عميل مبهرة.</p>
+        <div class="badges mt-3">
+          <span class="chip">تصميم معماري رشيق</span>
+          <span class="chip">اختبارات قبول صارمة</span>
+          <span class="chip">مؤشرات أداء واضحة</span>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="badge mb-2">شراكات موثوقة</div>
+        <p class="p">تكامل تقني مع كبار المصنعين، ما يضمن حلولًا متوافقة وقابلة للتطوير مع دعم مستمر.</p>
+        <div class="trust-logos mt-3">
+          <img src="assets/clients/huawei.svg" alt="Huawei">
+          <img src="assets/clients/microsoft.svg" alt="Microsoft">
+          <img src="assets/clients/dell.svg" alt="Dell">
+          <img src="assets/clients/bosch.svg" alt="Bosch">
+          <img src="assets/clients/hikvision.svg" alt="Hikvision">
+          <img src="assets/clients/cisco.svg" alt="Cisco">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section grid-dots">
+    <div class="container">
+      <div class="card glass reveal" style="text-align:center">
+        <h3 class="h2" style="font-size:var(--fs-h2)">جاهزون لنقل مؤسستك إلى المستوى التالي</h3>
+        <p class="p max-w-prose" style="margin-inline:auto">من الدراسة إلى التشغيل والصيانة، فريقنا يرافقك خطوة بخطوة ليقدم نتيجة تفوق المتوقع.</p>
+        <div class="hero-cta" style="justify-content:center">
+          <a href="contact.html" class="btn btn-primary">ابدأ الآن</a>
+          <a href="projects.html" class="btn btn-outline">شاهد ما أنجزناه</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="assets/logo-mark.svg" alt="ITA" style="height:26px;width:auto">
+    </div>
+    <div>© <span class="year-now">2025</span> جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<div class="modal" data-modal="gallery" style="display:none">
+  <div class="modal__dialog">
+    <img id="lb-img" src="" alt="" style="width:100%;height:auto;border-radius:12px">
+    <div style="display:flex;gap:10px;justify-content:space-between;margin-top:12px">
+      <button class="btn btn-outline" data-gallery-prev>السابق</button>
+      <button class="btn btn-outline" data-modal-close>إغلاق</button>
+      <button class="btn btn-outline" data-gallery-next>التالي</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const navEl=document.querySelector('header.nav');const toggleBtn=document.getElementById('navToggle');toggleBtn&&toggleBtn.addEventListener('click',()=>{navEl.classList.toggle('open')});document.addEventListener('click',e=>{if(!navEl.classList.contains('open'))return;if(!e.target.closest('.nav'))navEl.classList.remove('open')});
+  const thumbs=[...document.querySelectorAll('.gallery img')];const imgs=thumbs.map(t=>t.getAttribute('src'));const modal=document.querySelector('[data-modal="gallery"]');const lb=document.getElementById('lb-img');let idx=0;function openAt(i){idx=i;lb.src=imgs[idx];modal.style.display='grid';setTimeout(()=>modal.classList.add('open'),10)}thumbs.forEach(t=>t.addEventListener('click',()=>openAt(Number(t.dataset.gallery)||0)));document.querySelector('[data-gallery-prev]').addEventListener('click',()=>openAt((idx-1+imgs.length)%imgs.length));document.querySelector('[data-gallery-next]').addEventListener('click',()=>openAt((idx+1)%imgs.length));
+</script>
+<script src="script.js"></script>
+</body>
+</html>
